@@ -1,0 +1,176 @@
+.chart-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    height: 280px;
+    max-height: 320px;
+}
+
+button,
+input,
+select {
+    min-width: 0;
+}
+
+@media (min-width: 768px) {
+    .chart-container {
+        height: 320px;
+    }
+}
+
+@media (max-width: 767px) {
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    header #user-badge {
+        display: none;
+    }
+
+    main {
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    header .max-w-7xl {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+
+    header .h-16 {
+        height: auto;
+        min-height: 4rem;
+        padding: 0.75rem 0;
+        align-items: flex-start;
+    }
+
+    header .text-xl {
+        font-size: 1rem;
+    }
+
+    header .bg-emerald-500 {
+        width: 2rem;
+        height: 2rem;
+        font-size: 1rem;
+    }
+
+    header button[onclick="openTransactionModal()"] {
+        padding: 0.5rem 0.625rem;
+        font-size: 0.7rem;
+        white-space: nowrap;
+    }
+
+    header button[onclick="openTransactionModal()"] span {
+        font-size: 0;
+    }
+
+    header button[onclick="openTransactionModal()"] span::after {
+        content: 'Nova';
+        font-size: 0.7rem;
+    }
+
+    header .overflow-x-auto {
+        scrollbar-width: thin;
+        margin-left: -0.25rem;
+        margin-right: -0.25rem;
+        padding-left: 0.25rem;
+        padding-right: 0.25rem;
+    }
+
+    .tab-content > .grid,
+    .tab-content > .bg-white {
+        min-width: 0;
+    }
+
+    .chart-container {
+        height: 240px;
+    }
+
+    .overflow-x-auto {
+        max-width: 100%;
+    }
+
+    table {
+        min-width: 42rem;
+    }
+
+    #tab-reports table,
+    #tab-investments table {
+        min-width: 38rem;
+    }
+
+    #rep-chart-wrapper .flex.items-center,
+    #tab-dashboard .flex.items-center.space-x-2 {
+        flex-wrap: wrap;
+    }
+
+    #rep-chart-wrapper button,
+    #tab-dashboard button[id^="btn-chart-"] {
+        margin-top: 0.25rem;
+    }
+
+    .fixed.inset-0 {
+        overflow-y: auto;
+        align-items: flex-start;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
+    .fixed.inset-0 > div {
+        max-height: calc(100vh - 2rem);
+        overflow-y: auto;
+    }
+
+    #config-modal > div,
+    #auth-screen > div,
+    #modal-transaction > div,
+    #modal-investment > div {
+        width: 100%;
+        max-width: 100%;
+        padding: 1rem;
+        border-radius: 1rem;
+    }
+
+    #modal-transaction .grid.grid-cols-2,
+    #modal-investment .grid.grid-cols-2 {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    #ui-notification {
+        align-items: flex-start;
+    }
+
+    #ui-notification button {
+        flex-shrink: 0;
+    }
+
+    #tab-reports .flex.space-x-6 {
+        width: 100%;
+        justify-content: space-between;
+        gap: 0.75rem;
+    }
+
+    #tab-reports .flex.space-x-6 > div {
+        min-width: 0;
+    }
+
+    #tab-reports .flex.space-x-6 span:last-child {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1100px) {
+    header #user-badge {
+        display: none;
+    }
+}
+
+@media print {
+    .no-print { display: none !important; }
+    .print-only { display: block !important; }
+    body { background: white !important; color: black !important; }
+    #rep-chart-wrapper { page-break-inside: avoid; max-width: 100%; display: block; }
+    .chart-container { height: auto !important; max-height: 400px; page-break-inside: avoid; }
+    canvas { max-width: 100% !important; height: auto !important; }
+}
